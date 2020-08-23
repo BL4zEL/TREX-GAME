@@ -6,7 +6,7 @@ var gameState ;
 var cloudsGroup, cloudImage;
 var obstaclesGroup, obstacle1, obstacle2, obstacle3, obstacle4, obstacle5, obstacle6;
 var gameOver , gamOverImage , restart ,restartImage;
-var score, HighScore ;
+var score;
 function preload(){
   trex_running = loadAnimation("trex1.png","trex3.png","trex4.png");
   trex_collided = loadImage("trex_collided.png");
@@ -27,7 +27,6 @@ function preload(){
 function setup() {
   createCanvas(600, 200);
  gameState = PLAY ;
-  //HighScore= localStorage["HighestScore"];
   trex = createSprite(50,180,20,50);
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided",trex_collided);
@@ -89,7 +88,6 @@ function draw() {
   
    trex.collide(invisibleGround);
   text("Score: "+ score, 500,50);
-   //text("HighestScore: "+ localStorage["HighestScore"],  400,50);
   drawSprites();
 }
 
@@ -151,7 +149,4 @@ function spawnObstacles() {
   obstaclesGroup.destroyEach();
   cloudsGroup.destroyEach();
   trex.changeAnimation("running",trex_running);
-  if(localStorage["HighestScore"]<score){
-    localStorage["HighestScore"]=score;
-  }
   score = 0;}

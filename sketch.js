@@ -27,7 +27,7 @@ function preload(){
 function setup() {
   createCanvas(600, 200);
  gameState = PLAY ;
-  HighScore= localStorage["HighestScore"];
+  //HighScore= localStorage["HighestScore"];
   trex = createSprite(50,180,20,50);
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided",trex_collided);
@@ -89,7 +89,7 @@ function draw() {
   
    trex.collide(invisibleGround);
   text("Score: "+ score, 500,50);
-   text("HighestScore: "+ localStorage["HighestScore"],  400,50);
+   //text("HighestScore: "+ localStorage["HighestScore"],  400,50);
   drawSprites();
 }
 
